@@ -117,3 +117,36 @@ decimalButton.addEventListener('click', () => {
     display.textContent += '.';
   }
 });
+
+const addButton = document.querySelector('#add');
+const subtractButton = document.querySelector('#subtract');
+const multiplicationButton = document.querySelector('#multiply');
+const divisionButton = document.querySelector('#divide');
+
+addButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '+';
+  }
+});
+
+subtractButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '-';
+  }
+});
+
+multiplicationButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '×';
+  }
+});
+
+divisionButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '÷';
+  }
+});
