@@ -40,71 +40,102 @@ const clearButton = document.querySelector('#clear');
 const decimalButton = document.querySelector('#decimal');
 let num1 = 0;
 let num2 = 0;
+let isResult = false;
 oneButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "1";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "1";
   } else {
     display.textContent += "1";
   }
 });
 twoButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "2";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "2";
   } else {
     display.textContent += "2";
   }
 });
 threeButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "3";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "3";
   } else {
     display.textContent += "3";
   }
 });
 fourButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "4";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "4";
   } else {
     display.textContent += "4";
   }
 });
 fiveButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "5";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "5";
   } else {
     display.textContent += "5";
   }
 });
 sixButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "6";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "6";
   } else {
     display.textContent += "6";
   }
 });
 sevenButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "7";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "7";
   } else {
     display.textContent += "7";
   }
 });
 eightButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "8";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "8";
   } else {
     display.textContent += "8";
   }
 });
 nineButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "9";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "9";
   } else {
     display.textContent += "9";
   }
 });
 zeroButton.addEventListener('click', () => {
-  if (display.textContent == "0") {
+  if (isResult) {
+    display.textContent = "0";
+    isResult = false;
+  } else if (display.textContent == "0") {
     display.textContent = "0";
   } else {
     display.textContent += "0";
@@ -259,18 +290,22 @@ const equalButton = document.querySelector('#equal-btn');
 equalButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (displayText.includes('+')) {
+    isResult = true;
     num1 = +displayText.slice(0, displayText.indexOf('+'))
     num2 = +displayText.slice(displayText.indexOf('+') + 1)
     display.textContent = operate("+", num1, num2);
   } else if (displayText.includes('-')) {
+    isResult = true;
     num1 = +displayText.slice(0, displayText.indexOf('-'))
     num2 = +displayText.slice(displayText.indexOf('-') + 1)
     display.textContent = operate("-", num1, num2);
   } else if (displayText.includes('×')) {
+    isResult = true;
     num1 = +displayText.slice(0, displayText.indexOf('×'))
     num2 = +displayText.slice(displayText.indexOf('×') + 1)
     display.textContent = operate("×", num1, num2);
   } else if (displayText.includes('÷')) {
+    isResult = true;
     num1 = +displayText.slice(0, displayText.indexOf('÷'))
     num2 = +displayText.slice(displayText.indexOf('÷') + 1)
     display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
