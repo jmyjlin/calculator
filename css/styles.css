@@ -69,7 +69,8 @@ body {
 #eql-btn {
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 #equal-btn {
@@ -83,7 +84,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  width: 100% !important;
 }
 
 #equal-btn:active {

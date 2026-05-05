@@ -39,77 +39,77 @@ const zeroButton = document.querySelector('#zero');
 const clearButton = document.querySelector('#clear');
 const decimalButton = document.querySelector('#decimal');
 oneButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '1';
+  if (display.textContent == 0) {
+    display.textContent = 1;
   } else {
-    display.textContent += '1';
+    display.textContent += 1;
   }
 });
 twoButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '2';
+  if (display.textContent == 0) {
+    display.textContent = 2;
   } else {
-    display.textContent += '2';
+    display.textContent += 2;
   }
 });
 threeButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '3';
+  if (display.textContent == 0) {
+    display.textContent = 3;
   } else {
-    display.textContent += '3';
+    display.textContent += 3;
   }
 });
 fourButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '4';
+  if (display.textContent == 0) {
+    display.textContent = 4;
   } else {
-    display.textContent += '4';
+    display.textContent += 4;
   }
 });
 fiveButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '5';
+  if (display.textContent == 0) {
+    display.textContent = 5;
   } else {
-    display.textContent += '5';
+    display.textContent += 5;
   }
 });
 sixButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '6';
+  if (display.textContent == 0) {
+    display.textContent = 6;
   } else {
-    display.textContent += '6';
+    display.textContent += 6;
   }
 });
 sevenButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '7';
+  if (display.textContent == 0) {
+    display.textContent = 7;
   } else {
-    display.textContent += '7';
+    display.textContent += 7;
   }
 });
 eightButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '8';
+  if (display.textContent == 0) {
+    display.textContent = 8;
   } else {
-    display.textContent += '8';
+    display.textContent += 8;
   }
 });
 nineButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '9';
+  if (display.textContent == 0) {
+    display.textContent = 9;
   } else {
-    display.textContent += '9';
+    display.textContent += 9;
   }
 });
 zeroButton.addEventListener('click', () => {
-  if (display.textContent == '0') {
-    display.textContent = '0';
+  if (display.textContent == 0) {
+    display.textContent = 0;
   } else {
-    display.textContent += '0';
+    display.textContent += 0;
   }
 });
 clearButton.addEventListener('click', () => {
-  display.textContent = '0';
+  display.textContent = 0;
 });
 decimalButton.addEventListener('click', () => {
   const displayText = display.textContent;
@@ -148,5 +148,16 @@ divisionButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
     display.textContent += '÷';
+  }
+});
+
+const backspaceButton = document.querySelector('#backspace');
+backspaceButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  const trimmedText = displayText.slice(0, -1);
+  if (trimmedText.length > 0) {
+    display.textContent = trimmedText;
+  } else {
+    display.textContent = 0;
   }
 });
