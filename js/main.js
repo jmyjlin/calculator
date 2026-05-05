@@ -16,13 +16,13 @@ function divide(num1, num2) {
 
 function operate(operator, num1, num2) {
   if (operator === "+") {
-    add(num1, num2);
+    return add(num1, num2);
   } else if (operator === "-") {
-    subtract(num1, num2);
-  } else if (operator === "*") {
-    multiply(num1, num2);
-  } else if (operator === "/") {
-    divide(num1, num2);
+    return subtract(num1, num2);
+  } else if (operator === "×") {
+    return multiply(num1, num2);
+  } else if (operator === "÷") {
+    return divide(num1, num2);
   }
 }
 const display = document.querySelector('#display-txt');
@@ -38,6 +38,8 @@ const nineButton = document.querySelector('#nine');
 const zeroButton = document.querySelector('#zero');
 const clearButton = document.querySelector('#clear');
 const decimalButton = document.querySelector('#decimal');
+let num1 = 0;
+let num2 = 0;
 oneButton.addEventListener('click', () => {
   if (display.textContent == 0) {
     display.textContent = 1;
@@ -159,5 +161,27 @@ backspaceButton.addEventListener('click', () => {
     display.textContent = trimmedText;
   } else {
     display.textContent = 0;
+  }
+});
+
+const equalButton = document.querySelector('#equal-btn');
+equalButton.addEventListener('click', () => {
+  const displayText = display.textContent;
+  if (displayText.includes('+')) {
+    num1 = +displayText.slice(0, displayText.indexOf('+'))
+    num2 = +displayText.slice(displayText.indexOf('+') + 1)
+    display.textContent = operate("+", num1, num2);
+  } else if (displayText.includes('-')) {
+    num1 = +displayText.slice(0, displayText.indexOf('-'))
+    num2 = +displayText.slice(displayText.indexOf('-') + 1)
+    display.textContent = operate("-", num1, num2);
+  } else if (displayText.includes('×')) {
+    num1 = +displayText.slice(0, displayText.indexOf('×'))
+    num2 = +displayText.slice(displayText.indexOf('×') + 1)
+    display.textContent = operate("×", num1, num2);
+  } else if (displayText.includes('÷')) {
+    num1 = +displayText.slice(0, displayText.indexOf('÷'))
+    num2 = +displayText.slice(displayText.indexOf('÷') + 1)
+    display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
   }
 });
