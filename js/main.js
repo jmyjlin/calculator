@@ -136,12 +136,52 @@ addButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
     display.textContent += '+';
+  } else if (displayText.indexOf('+') != displayText.length - 1 || displayText.indexOf('-') != displayText.length - 1 || displayText.indexOf('×') != displayText.length - 1 || displayText.indexOf('÷') != displayText.length - 1) {
+    const displayText = display.textContent;
+    if (displayText.includes('+')) {
+      num1 = +displayText.slice(0, displayText.indexOf('+'))
+      num2 = +displayText.slice(displayText.indexOf('+') + 1)
+      display.textContent = operate("+", num1, num2);
+    } else if (displayText.includes('-')) {
+      num1 = +displayText.slice(0, displayText.indexOf('-'))
+      num2 = +displayText.slice(displayText.indexOf('-') + 1)
+      display.textContent = operate("-", num1, num2);
+    } else if (displayText.includes('×')) {
+      num1 = +displayText.slice(0, displayText.indexOf('×'))
+      num2 = +displayText.slice(displayText.indexOf('×') + 1)
+      display.textContent = operate("×", num1, num2);
+    } else if (displayText.includes('÷')) {
+      num1 = +displayText.slice(0, displayText.indexOf('÷'))
+      num2 = +displayText.slice(displayText.indexOf('÷') + 1)
+      display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
+    }
+    display.textContent += '+';
   }
 });
 
 subtractButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '-';
+  } else if (displayText.indexOf('+') != displayText.length - 1 || displayText.indexOf('-') != displayText.length - 1 || displayText.indexOf('×') != displayText.length - 1 || displayText.indexOf('÷') != displayText.length - 1) {
+    const displayText = display.textContent;
+    if (displayText.includes('+')) {
+      num1 = +displayText.slice(0, displayText.indexOf('+'))
+      num2 = +displayText.slice(displayText.indexOf('+') + 1)
+      display.textContent = operate("+", num1, num2);
+    } else if (displayText.includes('-')) {
+      num1 = +displayText.slice(0, displayText.indexOf('-'))
+      num2 = +displayText.slice(displayText.indexOf('-') + 1)
+      display.textContent = operate("-", num1, num2);
+    } else if (displayText.includes('×')) {
+      num1 = +displayText.slice(0, displayText.indexOf('×'))
+      num2 = +displayText.slice(displayText.indexOf('×') + 1)
+      display.textContent = operate("×", num1, num2);
+    } else if (displayText.includes('÷')) {
+      num1 = +displayText.slice(0, displayText.indexOf('÷'))
+      num2 = +displayText.slice(displayText.indexOf('÷') + 1)
+      display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
+    }
     display.textContent += '-';
   }
 });
@@ -150,12 +190,52 @@ multiplicationButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
     display.textContent += '×';
+  } else if (displayText.indexOf('+') != displayText.length - 1 || displayText.indexOf('-') != displayText.length - 1 || displayText.indexOf('×') != displayText.length - 1 || displayText.indexOf('÷') != displayText.length - 1) {
+    const displayText = display.textContent;
+    if (displayText.includes('+')) {
+      num1 = +displayText.slice(0, displayText.indexOf('+'))
+      num2 = +displayText.slice(displayText.indexOf('+') + 1)
+      display.textContent = operate("+", num1, num2);
+    } else if (displayText.includes('-')) {
+      num1 = +displayText.slice(0, displayText.indexOf('-'))
+      num2 = +displayText.slice(displayText.indexOf('-') + 1)
+      display.textContent = operate("-", num1, num2);
+    } else if (displayText.includes('×')) {
+      num1 = +displayText.slice(0, displayText.indexOf('×'))
+      num2 = +displayText.slice(displayText.indexOf('×') + 1)
+      display.textContent = operate("×", num1, num2);
+    } else if (displayText.includes('÷')) {
+      num1 = +displayText.slice(0, displayText.indexOf('÷'))
+      num2 = +displayText.slice(displayText.indexOf('÷') + 1)
+      display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
+    }
+    display.textContent += '×';
   }
 });
 
 divisionButton.addEventListener('click', () => {
   const displayText = display.textContent;
   if (!displayText.includes('+') && !displayText.includes('-') && !displayText.includes('×') && !displayText.includes('÷')) {
+    display.textContent += '÷';
+  } else if (displayText.indexOf('+') != displayText.length - 1 || displayText.indexOf('-') != displayText.length - 1 || displayText.indexOf('×') != displayText.length - 1 || displayText.indexOf('÷') != displayText.length - 1) {
+    const displayText = display.textContent;
+    if (displayText.includes('+')) {
+      num1 = +displayText.slice(0, displayText.indexOf('+'))
+      num2 = +displayText.slice(displayText.indexOf('+') + 1)
+      display.textContent = operate("+", num1, num2);
+    } else if (displayText.includes('-')) {
+      num1 = +displayText.slice(0, displayText.indexOf('-'))
+      num2 = +displayText.slice(displayText.indexOf('-') + 1)
+      display.textContent = operate("-", num1, num2);
+    } else if (displayText.includes('×')) {
+      num1 = +displayText.slice(0, displayText.indexOf('×'))
+      num2 = +displayText.slice(displayText.indexOf('×') + 1)
+      display.textContent = operate("×", num1, num2);
+    } else if (displayText.includes('÷')) {
+      num1 = +displayText.slice(0, displayText.indexOf('÷'))
+      num2 = +displayText.slice(displayText.indexOf('÷') + 1)
+      display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
+    }
     display.textContent += '÷';
   }
 });
