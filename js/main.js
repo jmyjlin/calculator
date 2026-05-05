@@ -221,5 +221,7 @@ document.addEventListener('keydown', (event) => {
     divisionButton.click();
   } else if (event.key === ".") {
     decimalButton.click();
+  } else if (event.key === "c" || event.key === "C") {
+    clearButton.click();
   }
 });
