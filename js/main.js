@@ -243,11 +243,15 @@ divisionButton.addEventListener('click', () => {
 const backspaceButton = document.querySelector('#backspace');
 backspaceButton.addEventListener('click', () => {
   const displayText = display.textContent;
-  const trimmedText = displayText.slice(0, -1);
-  if (trimmedText.length > 0) {
-    display.textContent = trimmedText;
-  } else {
+  if (displayText.includes('U') || displayText.includes('N')) {
     display.textContent = 0;
+  } else {
+    const trimmedText = displayText.slice(0, -1);
+    if (trimmedText.length > 0) {
+      display.textContent = trimmedText;
+    } else {
+      display.textContent = 0;
+    }
   }
 });
 
