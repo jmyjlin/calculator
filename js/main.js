@@ -185,3 +185,41 @@ equalButton.addEventListener('click', () => {
     display.textContent = (num2 === 0 ? "Undefined" : operate("÷", num1, num2));
   }
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === "1") {
+    oneButton.click();
+  } else if (event.key === "2") {
+    twoButton.click();
+  } else if (event.key === "3") {
+    threeButton.click();
+  } else if (event.key === "4") {
+    fourButton.click();
+  } else if (event.key === "5") {
+    fiveButton.click();
+  } else if (event.key === "6") {
+    sixButton.click();
+  } else if (event.key === "7") {
+    sevenButton.click();
+  } else if (event.key === "8") {
+    eightButton.click();
+  } else if (event.key === "9") {
+    nineButton.click();
+  } else if (event.key === "0") {
+    zeroButton.click();
+  } else if (event.key === "Backspace") {
+    backspaceButton.click();
+  } else if (event.key === "Enter") {
+    equalButton.click();
+  } else if (event.key === "+") {
+    addButton.click();
+  } else if (event.key === "-") {
+    subtractButton.click();
+  } else if (event.key === "*") {
+    multiplicationButton.click();
+  } else if (event.key === "/") {
+    divisionButton.click();
+  } else if (event.key === ".") {
+    decimalButton.click();
+  }
+});
